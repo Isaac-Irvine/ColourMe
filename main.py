@@ -29,7 +29,7 @@ async def colour(interaction: discord.Interaction, colour: str):
     elif match('(invis)|(invisible)', colour):
         colour_hex = '313338'
     else:
-        await interaction.response.send_message('wtf was that??. Say something like "blue", "red" or "#ff00ff"')
+        await interaction.response.send_message('wtf was that??. Say something like "blue", "red" or "#ff00ff", "invis(ible)"')
         return
 
     # because discord doesn't allow pure black
