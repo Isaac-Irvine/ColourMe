@@ -16,7 +16,7 @@ colour_me = ColourMe(intents=intents)
 
 
 @colour_me.tree.command()
-@app_commands.describe(colour='The colour you want your name. Can be a name or hex. E.g. "red", "blue", "#ff6464", "invis(ible)"')
+@app_commands.describe(colour='The colour you want your name. Can be a name or hex. E.g. "red", "blue", "#ff6464", "invisible"')
 async def colour(interaction: discord.Interaction, colour: str):
     '''Changes the colour of your discord name'''
 
@@ -29,7 +29,7 @@ async def colour(interaction: discord.Interaction, colour: str):
     elif match('(invis)|(invisible)', colour):
         colour_hex = '313338'
     else:
-        await interaction.response.send_message('wtf was that??. Say something like "blue", "red" or "#ff00ff", "invis(ible)"')
+        await interaction.response.send_message('wtf was that??. Say something like "blue", "red" or "#ff00ff", "invisible"')
         return
 
     # because discord doesn't allow pure black
