@@ -22,9 +22,9 @@ async def colour(interaction: discord.Interaction, colour: str):
 
     if colour.lower() in webcolors.CSS3_NAMES_TO_HEX:
         colour_hex = webcolors.name_to_hex(colour)[1:]
-    elif match('^#[0-9a-f]{6}$', colour):
+    elif match('^#[0-9a-fA-F]{6}$', colour):
         colour_hex = colour[1:] # remove the '#'
-    elif match('^[0-9a-f]{6}$', colour):
+    elif match('^[0-9a-fA-F]{6}$', colour):
         colour_hex = colour
     elif match('(invis)|(invisible)', colour):
         colour_hex = '313338'
