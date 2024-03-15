@@ -16,7 +16,7 @@ colour_me = ColourMe(intents=intents)
 
 
 @colour_me.tree.command()
-@app_commands.describe(colour='The colour you want your name. Can be a name or hex. E.g. "red", "blue", "#ff6464"')
+@app_commands.describe(colour='The colour you want your name. Can be a name or hex. E.g. "red", "blue", "#ff6464", "invis(ible)"')
 async def colour(interaction: discord.Interaction, colour: str):
     '''Changes the colour of your discord name'''
 
@@ -26,6 +26,8 @@ async def colour(interaction: discord.Interaction, colour: str):
         colour_hex = colour[1:] # remove the '#'
     elif match('^[0-9a-f]{6}$', colour):
         colour_hex = colour
+    elif match('(invis)|(invisible)', colour):
+        colour_hex = '313338'
     else:
         await interaction.response.send_message('wtf was that??. Say something like "blue", "red" or "#ff00ff"')
         return
